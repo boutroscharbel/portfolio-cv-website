@@ -41,16 +41,12 @@ Ensure you have the following installed:
    npm start
    
 5. Open your browser and go to http://localhost:3000 to view the website.
-   
-7. To create a production build, run:
-   ```bash
-   npm run build
 
-## Usage
+### Usage
 
 The application features a dark/light theme switch button in the top-right corner. Simply click the button to switch between themes. The theme preference is saved in local storage, so your preference persists across sessions.
 
-### Project Structure
+## Project Structure
 
 ```
 .
@@ -90,6 +86,15 @@ The application features a dark/light theme switch button in the top-right corne
 4. src/components/Personal/Personal.js
 5. src/components/Skills/Skills.js
 6. src/components/Work/Work.js
+
+## Deployment
+
+To create a production build, run:
+```bash
+npm run build
+```
+   
+I deployed this website as an **Azure Static Web App** using **Azure Pipelines**. Feel free to reach out if you need assistance with a similar setup.**
    
 ## Contributing
 Contributions and comments are welcome! Please open an issue or submit a pull request for any changes.
@@ -100,9 +105,9 @@ This project is licensed under the MIT License.
 ## Contact
 For any questions or suggestions, please reach out to me at:
 
-**LinkedIn**: [Charbel Boutros](https://www.linkedin.com/in/charbel-boutros-32b38272/)
-
 **GitHub**: [boutroscharbel](https://github.com/boutroscharbel)
+
+**LinkedIn**: [Charbel Boutros](https://www.linkedin.com/in/charbel-boutros-32b38272/)
 
 **Email**: charbel.boutros.dev@gmail.com
 
