@@ -1,0 +1,259 @@
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+/* Default to light theme */
+:root {
+    --font-family: 'Roboto', sans-serif;
+    --background-color: #ffffff;
+    /* Light background */
+    --text-color: #000000;
+    /* Dark text */
+    --section-background-color: #f0f0f0;
+    /* Light section background */
+    --icon-color: #0078D4;
+    --icon-hover-color: #005a9e;
+    --heading-color: #000000;
+    /* Dark headings */
+    --button-background-color: #0078D4;
+    --button-border-color: #3A3B3C;
+    --button-hover-background-color: #005a9e;
+    --job-title-color: #0078D4;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --background-color: #101214;
+    /* Dark background */
+    --text-color: #7A7C80;
+    /* Light text */
+    --section-background-color: #1A1C1E;
+    /* Dark section background */
+    --heading-color: #ffffff;
+    /* White headings */
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Grid Layout */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+    padding-top: 0;
+}
+
+@media (max-width: 780px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}
+
+/* Section 1 (Profile) */
+.section-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--section-background-color);
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.section-1 i {
+    color: var(--icon-color);
+}
+
+.section-1 i:hover {
+    color: var(--icon-hover-color);
+}
+
+.section-1 h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: var(--heading-color);
+}
+
+.section-1 p {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+/* Section 2 (Details) */
+.section-2 {
+    padding: 20px;
+    background-color: var(--section-background-color);
+    border-radius: 10px;
+}
+
+.section-2 h2 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+    color: var(--heading-color);
+}
+
+.section-2 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Certifications */
+.certification a {
+    display: block;
+    padding: 10px;
+    background-color: var(--button-background-color);
+    /* border: 1px solid var(--button-border-color); */
+    color: var(--heading-color);
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.certification a:hover {
+    background-color: var(--button-hover-background-color);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    font-size: 2rem;
+    margin: 10px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--icon-hover-color);
+}
+
+/* Work */
+.job {
+    margin-bottom: 20px;
+}
+
+.job-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--job-title-color);
+}
+
+.job-details,
+.job-duration {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* Switch Button Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--button-background-color);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: var(--button-hover-background-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+/* Positioning the Switch Button */
+
+.button-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: 20px;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.fa-moon {
+    color: var(--icon-color);
+}
+
+.fa-sun {
+    color: var(--icon-color);
+}
+
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked+.checkbox-label .ball {
+    transform: translateX(24px);
+}
